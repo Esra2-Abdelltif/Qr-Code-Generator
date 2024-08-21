@@ -16,7 +16,7 @@ class ShareQrCodeWidget  extends StatefulWidget {
 }
 
 class _ShareQrCodeWidgetState extends State<ShareQrCodeWidget> {
-  Future<void> converQrCodeToImage() async{
+  Future<void> convertQrCodeToImage() async{
     RenderRepaintBoundary boundary = widget.globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
     ui.Image image = await boundary.toImage();
     final directory = (await getApplicationDocumentsDirectory()).path;
@@ -33,7 +33,7 @@ class _ShareQrCodeWidgetState extends State<ShareQrCodeWidget> {
     return   SharedBtn(
       onPressed: () {
         setState(() {
-          converQrCodeToImage();                });
+          convertQrCodeToImage();                });
 
 
       },

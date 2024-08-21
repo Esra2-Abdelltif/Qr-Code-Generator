@@ -18,7 +18,7 @@ class DownloadQrIconWidget extends StatefulWidget {
 
 class _DownloadQrIconWidgetState extends State<DownloadQrIconWidget> {
   bool dirExists = false;
-  Future<void> converQrCodeToImage() async{
+  Future<void> convertQrCodeToImage() async{
     try {
       RenderRepaintBoundary boundary = widget.globalKey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
@@ -46,7 +46,7 @@ class _DownloadQrIconWidgetState extends State<DownloadQrIconWidget> {
   @override
   Widget build(BuildContext context) {
     return  SharedBtn(
-      onPressed: converQrCodeToImage,
+      onPressed: convertQrCodeToImage,
       btnText: "Download Qr Code",
     );
   }
