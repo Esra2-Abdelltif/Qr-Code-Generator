@@ -28,7 +28,7 @@ Created QR Code Generator and QR Code Scanner App In Flutter With Save As Image 
 
 ![image](https://github.com/user-attachments/assets/d57bcd28-abac-4878-a1a3-42b23320dd93)
 
-✨ Cover
+# ✨ Cover
 
 ![image](https://github.com/user-attachments/assets/30d1cb98-8099-477a-b1e3-8915435863ff)
 
