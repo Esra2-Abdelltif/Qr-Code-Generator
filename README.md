@@ -37,4 +37,4 @@ ScreenShoot:
 
 | Home Screen           |QR Code Generator            |   QR Code Scanner             
 ------------------------:|:-------------------------:|:-------------------------:
-![image](https://github.com/user-attachments/assets/ce0986ee-f30b-4d66-96bf-ac09c6b6192b)|![image](https://github.com/user-attachments/assets/6368f1a1-868d-46bf-8d81-b0677d947022)| ![Screenshot_20220825-232436](https://user-images.githubusercontent.com/72301777/186775455-7f8fce04-6c2a-4c19-9ffd-6a5a79be6667.jpg)
+![image](https://github.com/user-attachments/assets/ce0986ee-f30b-4d66-96bf-ac09c6b6192b)|![image](https://github.com/user-attachments/assets/6368f1a1-868d-46bf-8d81-b0677d947022)| ![image](https://github.com/user-attachments/assets/030140d7-68f8-468b-9c3d-6f3e8962264b)
