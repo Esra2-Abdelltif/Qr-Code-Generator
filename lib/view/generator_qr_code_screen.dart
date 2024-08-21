@@ -70,10 +70,22 @@ class _GeneratorQRCodePageState extends State<GeneratorQRCodePage> {
                     setState(() {data = value;
                     });
                   },),
-                  ShareQrCodeWidget(globalKey: globalKey,),
-                  DownloadQrIconWidget(
-                    globalKey: globalKey,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ShareQrCodeWidget(
+                          globalKey: globalKey,
+                        ),
+                        SizedBox(width: 20,),
+                        DownloadQrIconWidget(
+                          globalKey: globalKey,
+                        )
+                      ],
+                    ),
                   ),
+
 
                 ],
               ),

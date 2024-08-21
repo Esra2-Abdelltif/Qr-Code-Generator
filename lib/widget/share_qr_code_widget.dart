@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:qr_code_generator/widget/shared_btn.dart';
+import 'package:qr_code_generator/widget/shared_action_icon_widget.dart';
 import 'dart:ui' as ui;
 import 'dart:io';
 import 'dart:typed_data';
@@ -9,7 +9,8 @@ import 'dart:typed_data';
 import 'package:share/share.dart';
 class ShareQrCodeWidget  extends StatefulWidget {
   final GlobalKey globalKey;
-  const ShareQrCodeWidget({super.key,required this.globalKey});
+
+  const ShareQrCodeWidget({super.key,required this.globalKey,});
 
   @override
   State<ShareQrCodeWidget> createState() => _ShareQrCodeWidgetState();
@@ -30,14 +31,16 @@ class _ShareQrCodeWidgetState extends State<ShareQrCodeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return   SharedBtn(
-      onPressed: () {
+    return
+    SharedActionIconWidget(
+      actionText: "Share Qr Code",
+      actionIcon: Icons.share,
+      onTap: () {
         setState(() {
           convertQrCodeToImage();                });
 
 
       },
-      btnText: "Share Qr Code ",
     );
   }
 }
