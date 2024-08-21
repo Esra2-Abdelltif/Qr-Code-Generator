@@ -12,9 +12,16 @@ Created QR Code Generator and QR Code Scanner App In Flutter With Save As Image 
   
 # 🛠 Dependencies
 
-
-
-![image](https://github.com/user-attachments/assets/b5335f44-8e52-4bb5-ac5d-3372beaa8ef8)
+  ``` 
+  qr_flutter: 
+  share: 
+  path_provider:
+  image_gallery_saver: 
+  flutter_barcode_scanner: 
+  animated_splash_screen:
+  flutter_launcher_icons: 
+  url_launcher: 
+  ``` 
 
 
 # 📁 Project Structure
