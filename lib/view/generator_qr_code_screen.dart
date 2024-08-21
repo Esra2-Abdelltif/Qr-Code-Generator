@@ -1,3 +1,4 @@
+import 'package:qr_code_generator/widget/customa_app_bar.dart';
 import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
 import 'package:qr_code_generator/widget/shared_text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -20,26 +21,7 @@ class _GeneratorQRCodePageState extends State<GeneratorQRCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('QR Code Generator'),
-        centerTitle: true,
-        leading: Row(
-          children: [
-            const SizedBox(width: 15),
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context); // Navigate back when the arrow is pressed
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: AppColors.primaryColor,
-                size: 30,
-              ),
-            ),
-
-          ],
-        ),
-      ),
+      appBar: customAppBar(context: context,titleText: 'QR Code Generator'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0),
