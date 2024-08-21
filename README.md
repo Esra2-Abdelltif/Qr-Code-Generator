@@ -10,13 +10,13 @@ Created QR Code Generator and QR Code Scanner App In Flutter With Save As Image 
 - using url_launcher to open url or search text in browser .
 
   
-🛠 #Dependencies
+# 🛠 Dependencies
 
 
 
 ![image](https://github.com/user-attachments/assets/b5335f44-8e52-4bb5-ac5d-3372beaa8ef8)
 
 
-📁 Project Structure
+# 📁 Project Structure
 
 ![image](https://github.com/user-attachments/assets/d57bcd28-abac-4878-a1a3-42b23320dd93)
