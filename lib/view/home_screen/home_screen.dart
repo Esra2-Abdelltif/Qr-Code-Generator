@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:qr_code_generator/constants/image.dart';
-import 'package:qr_code_generator/view/generator_qr_code_screen.dart';
-import 'package:qr_code_generator/view/scan_qr_code_screen.dart';
+import 'package:qr_code_generator/view/generator_qr_code_screen/generator_qr_code_screen.dart';
+import 'package:qr_code_generator/view/scan_qr_code_screen/scan_qr_code_screen.dart';
 import 'package:qr_code_generator/widget/custom_card_widget.dart';
 import 'package:qr_code_generator/widget/shared_btn.dart';
 
@@ -53,7 +53,6 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-
                   CustomCardWidget(
                     imagePath: AppImagePaths.scanQrImage,
                     btn: GestureDetector(onTap: () => scanQrCode, child: SharedBtn(
@@ -61,7 +60,6 @@ class _HomePageState extends State<HomePage> {
                       btnText: "Scan Qr code",
                     ),),
                   ),
-
                   CustomCardWidget(
                     imagePath:  AppImagePaths.generateQrImage,
                     buttonText: "Generate Qr code",

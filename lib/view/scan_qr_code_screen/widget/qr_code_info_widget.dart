@@ -4,10 +4,10 @@ import 'package:intl/intl.dart';
 import 'package:qr_code_generator/constants/styles.dart';
 import 'package:qr_code_generator/functions/is_text_url_fun.dart';
 
-class TextTypeWidget extends StatelessWidget {
+class QrCodeIfnoWidget extends StatelessWidget {
   final String textQrCodeScan;
 
-  const TextTypeWidget({super.key, required this.textQrCodeScan});
+  const QrCodeIfnoWidget({super.key, required this.textQrCodeScan});
 
   @override
   Widget build(BuildContext context) {

@@ -6,10 +6,10 @@ import 'package:qr_code_generator/widget/shared_action_icon_widget.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class QrTextAction extends StatelessWidget {
+class QrCodeReaderAction extends StatelessWidget {
   final String textQrCodeScan;
 
-  const QrTextAction({super.key, required this.textQrCodeScan});
+  const QrCodeReaderAction({super.key, required this.textQrCodeScan});
 
   @override
   Widget build(BuildContext context) {

@@ -3,9 +3,9 @@ import 'package:qr_code_generator/constants/image.dart';
 import 'package:qr_code_generator/constants/styles.dart';
 import 'package:qr_code_generator/widget/customa_app_bar.dart';
 import 'package:qr_code_generator/widget/download_qr_code_widget.dart';
-import 'package:qr_code_generator/widget/qr_text_action.dart';
+import 'package:qr_code_generator/view/scan_qr_code_screen/widget/qr_code_reader_action.dart';
 import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
-import 'package:qr_code_generator/widget/text_type_widget.dart';
+import 'package:qr_code_generator/view/scan_qr_code_screen/widget/qr_code_info_widget.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class ScanQRCodePage extends StatefulWidget {
@@ -40,7 +40,7 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  TextTypeWidget(
+                  QrCodeIfnoWidget(
                     textQrCodeScan: widget.textQrCodeScan,
                   ),
                   Container(
@@ -56,7 +56,7 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
                       ),
                     ),
                   ),
-                  QrTextAction(textQrCodeScan: widget.textQrCodeScan,),
+                  QrCodeReaderAction(textQrCodeScan: widget.textQrCodeScan,),
                   SizedBox(height: 15,),
                   Center(
                     child: Stack(
