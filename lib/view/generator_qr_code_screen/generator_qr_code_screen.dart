@@ -1,11 +1,10 @@
-import 'package:qr_code_generator/constants/image.dart';
-import 'package:qr_code_generator/widget/customa_app_bar.dart';
-import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
-import 'package:qr_code_generator/widget/shared_text_field_widget.dart';
+import 'package:qr_code_generator/componentes/customa_app_bar.dart';
+import 'package:qr_code_generator/componentes/qr_image_view_widget.dart';
+import 'package:qr_code_generator/componentes/shared_text_field_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qr_code_generator/componentes/share_qr_code_widget.dart';
 import 'package:qr_code_generator/constants/styles.dart';
-import 'package:qr_code_generator/widget/download_qr_code_widget.dart';
+import 'package:qr_code_generator/componentes/download_qr_code_widget.dart';
 
 class GeneratorQRCodePage extends StatefulWidget {
   const GeneratorQRCodePage({super.key});
@@ -39,33 +38,7 @@ class _GeneratorQRCodePageState extends State<GeneratorQRCodePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Stack(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        child:   RepaintBoundary(
-                          key: globalKey,
-                          child: QrImageView(
-                            data: data,
-                            version: QrVersions.auto,
-                            size: 230,
-                            backgroundColor: Colors.white,
-                            gapless: true,
-                            errorStateBuilder: (cxt, err){
-                              return const Center(
-                                child: Text("Error"),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                       const Image(
-                        image: AssetImage(AppImagePaths.qrBorderImage),
-                        width: 250,
-                        height: 250,
-                      )
-                    ],
-                  ),
+                  QrImageViewWidget(textQrCodeScan: data,globalKey: globalKey,),
                   SharedTextFieldWidget(controller: textController,fun: (value) {
                     setState(() {data = value;
                     });

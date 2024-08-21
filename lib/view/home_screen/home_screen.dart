@@ -4,8 +4,8 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:qr_code_generator/constants/image.dart';
 import 'package:qr_code_generator/view/generator_qr_code_screen/generator_qr_code_screen.dart';
 import 'package:qr_code_generator/view/scan_qr_code_screen/scan_qr_code_screen.dart';
-import 'package:qr_code_generator/widget/custom_card_widget.dart';
-import 'package:qr_code_generator/widget/shared_btn.dart';
+import 'package:qr_code_generator/componentes/custom_card_widget.dart';
+import 'package:qr_code_generator/componentes/shared_btn.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -5,7 +5,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:qr_code_generator/constants/styles.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:qr_code_generator/widget/shared_action_icon_widget.dart';
+import 'package:qr_code_generator/componentes/shared_action_icon_widget.dart';
 import 'dart:ui' as ui;
 
 class DownloadQrIconWidget extends StatefulWidget {

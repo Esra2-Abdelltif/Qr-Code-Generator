@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code_generator/widget/shared_btn.dart';
+import 'package:qr_code_generator/componentes/shared_btn.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String imagePath;

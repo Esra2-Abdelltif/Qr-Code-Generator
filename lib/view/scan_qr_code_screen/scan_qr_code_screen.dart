@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code_generator/constants/image.dart';
 import 'package:qr_code_generator/constants/styles.dart';
-import 'package:qr_code_generator/widget/customa_app_bar.dart';
-import 'package:qr_code_generator/widget/download_qr_code_widget.dart';
+import 'package:qr_code_generator/componentes/customa_app_bar.dart';
+import 'package:qr_code_generator/componentes/download_qr_code_widget.dart';
 import 'package:qr_code_generator/view/scan_qr_code_screen/widget/qr_code_reader_action.dart';
-import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
+import 'package:qr_code_generator/componentes/qr_image_view_widget.dart';
 import 'package:qr_code_generator/view/scan_qr_code_screen/widget/qr_code_info_widget.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qr_code_generator/componentes/share_qr_code_widget.dart';
 
 class ScanQRCodePage extends StatefulWidget {
   final String textQrCodeScan;
@@ -59,33 +58,7 @@ class _ScanQRCodePageState extends State<ScanQRCodePage> {
                   QrCodeReaderAction(textQrCodeScan: widget.textQrCodeScan,),
                   SizedBox(height: 15,),
                   Center(
-                    child: Stack(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10.0),
-                          child: RepaintBoundary(
-                            key: globalKey,
-                            child: QrImageView(
-                              data: widget.textQrCodeScan,
-                              version: QrVersions.auto,
-                              size: 230,
-                              backgroundColor: Colors.white,
-                              gapless: true,
-                              errorStateBuilder: (cxt, err) {
-                                return const Center(
-                                  child: Text("Error"),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                        const Image(
-                          image: AssetImage(AppImagePaths.qrBorderImage),
-                          width: 250,
-                          height: 250,
-                        )
-                      ],
-                    ),
+                    child: QrImageViewWidget(textQrCodeScan: widget.textQrCodeScan,globalKey: globalKey,)
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
