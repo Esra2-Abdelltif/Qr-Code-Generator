@@ -24,7 +24,7 @@ class _ShareQrCodeWidgetState extends State<ShareQrCodeWidget> {
     Uint8List pngBytes = byteData!.buffer.asUint8List();
     File imgFile  = File("$directory/qrCode.png");
     await imgFile.writeAsBytes(pngBytes);
-    await Share.shareFiles([imgFile.path],text:"Your text share");
+    await Share.shareFiles([imgFile.path],text:"Your Qr share");
 
   }
 
