@@ -9,6 +9,12 @@ Created QR Code Generator and QR Code Scanner App In Flutter With Save As Image 
 - flutter_launcher_icons to change app icon
 - using url_launcher to open url or search text in browser .
 
+⚡ 🛠 features
+- generate QrCode.
+- Share or Download QrCode generated.
+- scan QrCode.
+- share or copy QrCode results .
+
   
 # 🛠 Dependencies
 
