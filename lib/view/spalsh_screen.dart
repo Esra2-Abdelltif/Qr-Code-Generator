@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
       duration: 900,
       splash: Center(child: Image.asset( AppImagePaths.qrCodeImage,)),
       nextScreen:const HomePage(),
-      splashIconSize: 150,
+      splashIconSize: 200,
       backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
       splashTransition: SplashTransition.rotationTransition,
 
