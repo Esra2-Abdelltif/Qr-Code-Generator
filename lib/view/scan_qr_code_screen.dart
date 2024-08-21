@@ -1,85 +1,88 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:qr_code_generator/constants/image.dart';
+import 'package:qr_code_generator/constants/styles.dart';
 import 'package:qr_code_generator/widget/customa_app_bar.dart';
+import 'package:qr_code_generator/widget/download_qr_code_widget.dart';
+import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class ScanQRCodePage extends StatefulWidget {
-  const ScanQRCodePage({super.key});
+  final String textQrCodeScan;
+  const ScanQRCodePage({super.key,required this.textQrCodeScan});
   @override
   State<ScanQRCodePage> createState() => _ScanQRCodePageState();
 }
 
 class _ScanQRCodePageState extends State<ScanQRCodePage> {
-  String textQrCodeScan = "";
+  final GlobalKey globalKey = GlobalKey();
 
-  Future<void> scanQrCode() async{
-    try{
-      final qrCod = await FlutterBarcodeScanner.scanBarcode(
-          "#ff6666", "cancel", true, ScanMode.QR);
-      if(qrCod.isNotEmpty){
-        print("My code qr : $qrCod");
-        textQrCodeScan = qrCod;
-        setState(() {
-
-        });
-      }
-    }on PlatformException{
-      print("exception");
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: customAppBar(context: context,titleText: 'QR Code Generator'),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 15,right: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-
-              GestureDetector(
-                onTap: ()=> scanQrCode(),
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: Theme.of(context).primaryColor,
-                          width: 1
-                      )
-                  ),
-                  child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.document_scanner_outlined,color: Theme.of(context).primaryColor),
-                          const SizedBox(width: 10),
-                          Text("Scanner",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Theme.of(context).primaryColor
-                            ),
-                          ),
-                        ],
-                      )
-                  ),
-                ),
+    return  Scaffold(
+      appBar: customAppBar(context: context,titleText: 'QR Code Reader'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          child: Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.85,
+              height: MediaQuery.of(context).size.height * 0.7,
+              margin: const EdgeInsets.only(bottom: 50),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: AppColors.secondBackGroundColor
               ),
-              const SizedBox(height: 20),
-              if(textQrCodeScan.isNotEmpty)
-                Center(
-                  child: Text(textQrCodeScan,
-                    style:const TextStyle(
-                        fontSize: 16,
-                        color: Colors.black
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10.0),
+                        child:   RepaintBoundary(
+                          key: globalKey,
+                          child: QrImageView(
+                            data: widget.textQrCodeScan,
+                            version: QrVersions.auto,
+                            size: 230,
+                            backgroundColor: Colors.white,
+                            gapless: true,
+                            errorStateBuilder: (cxt, err){
+                              return const Center(
+                                child: Text("Error"),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      const Image(
+                        image: AssetImage(AppImagePaths.qrBorderImage),
+                        width: 250,
+                        height: 250,
+                      )
+                    ],
+                  ),
+                  Center(
+                    child: Text(widget.textQrCodeScan,
+                      style:const TextStyle(
+                          fontSize: 16,
+                      ),
                     ),
                   ),
-                )
-            ],
+                  ShareQrCodeWidget(globalKey: globalKey,),
+                  DownloadQrIconWidget(
+                    globalKey: globalKey,
+                  ),
+
+                ],
+              ),
+            ),
           ),
-        )// This trailing comma makes auto-formatting nicer for build methods.
+        ),
+      ),
     );
   }
 

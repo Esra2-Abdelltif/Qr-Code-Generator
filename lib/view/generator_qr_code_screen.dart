@@ -1,3 +1,4 @@
+import 'package:qr_code_generator/constants/image.dart';
 import 'package:qr_code_generator/widget/customa_app_bar.dart';
 import 'package:qr_code_generator/widget/share_qr_code_widget.dart';
 import 'package:qr_code_generator/widget/shared_text_field_widget.dart';
@@ -58,8 +59,8 @@ class _GeneratorQRCodePageState extends State<GeneratorQRCodePage> {
                           ),
                         ),
                       ),
-                      const Image(
-                        image: AssetImage('assest/qrborder.png'),
+                       const Image(
+                        image: AssetImage(AppImagePaths.qrBorderImage),
                         width: 250,
                         height: 250,
                       )

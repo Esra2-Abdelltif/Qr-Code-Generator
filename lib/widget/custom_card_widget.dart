@@ -3,13 +3,15 @@ import 'package:qr_code_generator/widget/shared_btn.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String imagePath;
-  final String buttonText;
-  final VoidCallback onPressed;
+  final String? buttonText;
+  final void Function()? onPressed;
+  final Widget? btn;
 
   const CustomCardWidget({super.key,
     required this.imagePath,
-    required this.buttonText,
-    required this.onPressed,
+     this.buttonText,
+     this.onPressed,
+    this.btn
   });
 
   @override
@@ -27,9 +29,10 @@ class CustomCardWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          SharedBtn(
+
+          btn?? SharedBtn(
             onPressed: onPressed,
-            btnText: buttonText,
+            btnText: buttonText!,
           )
         ],
       ),
