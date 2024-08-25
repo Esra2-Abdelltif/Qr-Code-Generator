@@ -27,7 +27,10 @@ Created QR Code Generator and QR Code Scanner App In Flutter With Save As Image 
   animated_splash_screen:
   flutter_launcher_icons: 
   url_launcher: 
-  ``` 
+  ```
+
+
+🚀 Download the app on Google Drive : [https://drive.google.com/file/d/17xKAiTY8E6RHbGwQu-9oeWpebJYgn24R/view](https://drive.google.com/file/d/17xKAiTY8E6RHbGwQu-9oeWpebJYgn24R/view)
 
 
 # 📁 Project Structure
